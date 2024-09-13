@@ -8,6 +8,13 @@ function onYouTubeIframeAPIReady() {
   loadVideo(videoURLs);
 }
 
+window.addEventListener('DOMContentLoaded', function(){
+  if (YT.Player) {
+    //Webページが読み込まれた時にプレーヤーを呼び出す
+    loadVideo(videoURLs);
+  }
+})
+
 function loadVideo(videoURLs) {
   //videoID一覧を出力
   let urlString = ""
@@ -26,9 +33,9 @@ function loadVideo(videoURLs) {
   //動画をプレイヤーにセットする
   if (videoURLs) {
     player = new YT.Player('player', {
-    height: '780',
-    width: '1280',
-    playerVars: {
+      height: '780',
+      width: '1280',
+      playerVars: {
         'playlist': urlString,
         'autoplay': 1, // 自動再生を有効化
         'loop': 1, // ループ再生
