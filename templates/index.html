@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Video Player</title>
     <script>
-      var videos = {{ videos|tojson|safe }};
+      var videoURLs = {{ videoURLs|tojson|safe }};
     </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
