@@ -1,0 +1,16 @@
+<div class="stream-content">
+  <a href="/playlist" id="button" class="button">プレイリスト視聴</a>
+  <input type="text" class="url-input" placeholder="http://example.com" value="https://www.youtube.com/watch?v=7XXq6zb74Ss">
+  <input type="text" class="url-input" placeholder="http://example.com" value="https://www.youtube.com/watch?v=AJRPMmyAEAQ&t=16s">
+  <input type="text" class="url-input" placeholder="http://example.com" value="">
+  <input type="text" class="url-input" placeholder="http://example.com" value="">
+  <input type="text" class="url-input" placeholder="http://example.com" value="">
+  <input type="text" class="url-input" placeholder="http://example.com" value="">
+  <input type="text" class="url-input" placeholder="http://example.com" value="">
+  <input type="text" class="url-input" placeholder="http://example.com" value="">
+</div>
+
+<script>
+  var videoURLs = {{ videoURLs|tojson|safe }};
+</script>
+<script src="{{ url_for('static', filename='js/index-script.js') }}"></script>
