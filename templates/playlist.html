@@ -9,38 +9,9 @@ PlaylistTube
 {% endblock %}
 
 {% block main %}
-<div class="player">
-  <div id="player"></div>
-</div>
-
-<script>
-  var videoURLs = {{ videoURLs|tojson|safe }};
-</script>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
+{% include 'partials/playlist.html' %}
 {% endblock %}
 
 {% block footer %}
 {% include 'partials/footer.html' %}
 {% endblock %}
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Player</title>
-    <script>
-      var videoURLs = {{ videoURLs|tojson|safe }};
-    </script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-    <div id="player" class="player"></div>
-</body>
-</html> -->
