@@ -1,0 +1,11 @@
+<input type="text" id="url-sectionvideo" class="url-sectionvideo" placeholder="http://example.com" value="">
+<input type="text" id="start-time" class="start-time" placeholder="hh:mm:ss:ms" value="00:01:00:00">
+<input type="text" id="end-time" class="end-time" placeholder="hh:mm:ss:ms" value="00:01:20:00">
+<a href="#" id="button-start" class="button">視聴開始</a>
+
+<div class="player">
+  <div id="player"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/sectionvideo-script.js') }}"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
