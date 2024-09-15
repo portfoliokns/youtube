@@ -1,0 +1,23 @@
+<div class="player-block">
+  <div class="player">
+    <div id="player0"></div>
+  </div>
+  <div class="player">
+    <div id="player1"></div>
+  </div>
+</div>
+
+<div class="player-block">
+  <div class="player">
+    <div id="player2"></div>
+  </div>
+  <div class="player">
+    <div id="player3"></div>
+  </div>
+</div>
+
+<script>
+  var videoURLs = {{ videoURLs|tojson|safe }};
+</script>
+<script src="{{ url_for('static', filename='js/multivideo-script.js') }}"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
