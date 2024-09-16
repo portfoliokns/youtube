@@ -30,5 +30,9 @@ def multivideo():
   videoURLs = urls.split(',') if urls else default_videoURLs_multivideo
   return render_template('multivideo.html', videoURLs=videoURLs)
 
+@app.route('/sectionvideo')
+def sectionvideo():
+  return render_template('sectionvideo.html')
+
 if __name__ == "__main__":
   app.run(debug=True)
