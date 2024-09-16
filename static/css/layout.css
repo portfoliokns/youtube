@@ -99,7 +99,7 @@ a{
   border-color: #388e3c; /* クリック時のボーダー色 */
 }
 
-.url-input-playlist,.url-input-multi{
+.url-input-playlist,.url-input-multi,.url-input-section{
   width: 350px;
   padding: 5px;
   margin: 5px;

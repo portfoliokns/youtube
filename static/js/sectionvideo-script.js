@@ -1,6 +1,11 @@
 let player;
 var button = document.getElementById('button-start');
 var loopInterval
+var videoURL = videoURL;
+
+window.addEventListener('load', function() {
+  document.getElementById('url-sectionvideo').value = videoURL;
+})
 
 function onYouTubeIframeAPIReady() {
   console.log('YouTube IFrame API is ready');
