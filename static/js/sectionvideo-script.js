@@ -59,6 +59,11 @@ button.addEventListener('click', function() {
   var start = document.getElementById('start-time');
   var end = document.getElementById('end-time');
 
+  if (!url.value) {
+    alert("動画のURLを設定してください。");
+    return;
+  }
+
   if (!isTimeValue(start.value) || !isTimeValue(end.value)) {
     alert("入力時刻に誤りがあります。確認してください。hh:mm:ss:msの形式で数値で入力する必要があります。");
     return;
