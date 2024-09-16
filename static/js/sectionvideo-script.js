@@ -59,11 +59,23 @@ button.addEventListener('click', function() {
   var url = document.getElementById('url-sectionvideo');
   var start = document.getElementById('start-time');
   var end = document.getElementById('end-time');
+
+  if (!isTimeValue(start.value) || !isTimeValue(end.value)) {
+    alert("入力時刻に誤りがあります。確認してください。hh:mm:ss:msの形式で数値で入力する必要があります。");
+    return;
+  }
+
   var startTime = time2seconds(start.value)
   var endTime = time2seconds(end.value)
+  if (startTime >= endTime) {
+    alert("開始時刻と終了時刻に誤りがあります。入力時刻が前後していないかを確認してください。");
+    return;
+  }
+
   loadVideo(url.value, startTime, endTime)
 })
 
+//ミリ病を数値に変換
 function time2seconds(time) {
   const parts = time.split(':').map(Number)
   let seconds = 0;
@@ -77,4 +89,21 @@ function time2seconds(time) {
   }
 
   return seconds
+}
+
+//数値関連以外の文字列が入力されていないか確認
+function isTimeValue(time) {
+  const parts = time.split(':').map(Number)
+
+  if (isNumeric(parts[0]) == false) return false
+  if (isNumeric(parts[1]) == false) return false
+  if (isNumeric(parts[2]) == false) return false
+  if (isNumeric(parts[3]) == false) return false
+
+  return true;
+};
+
+function isNumeric(str) {
+  // 文字列が空でないことを確認し、数字のみで構成されているかチェック
+  return /^\d+$/.test(str);
 }
