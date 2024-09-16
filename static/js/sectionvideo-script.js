@@ -3,7 +3,6 @@ var button = document.getElementById('button-start');
 var loopInterval
 
 function onYouTubeIframeAPIReady() {
-  // YouTube APIが読み込まれたときにプレーヤーを呼び出す
   console.log('YouTube IFrame API is ready');
 }
 
