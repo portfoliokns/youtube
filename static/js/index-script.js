@@ -13,7 +13,6 @@ document.getElementById('button-playlist').addEventListener('click', function() 
   })
 
   var queryString = 'urls=' + encodeURIComponent(urls.join(','));
-  console.log(queryString)
   window.location.href = '/playlist?' + queryString;
 })
 
@@ -32,7 +31,24 @@ document.getElementById('button-multi').addEventListener('click', function() {
   })
 
   var queryString = 'urls=' + encodeURIComponent(urls.join(','));
-  console.log(queryString)
   window.location.href = '/multivideo?' + queryString;
 })
 
+//セクション視聴ボタン
+document.getElementById('button-section').addEventListener('click', function() {
+  event.preventDefault();
+
+  var inputs = document.querySelectorAll('.url-input-section');
+  var urls = []
+
+  inputs.forEach(function(input) {
+    var value = input.value.trim();
+    if (value) {
+      urls.push(value)
+    }
+  })
+
+  var queryString = 'urls=' + encodeURIComponent(urls.join(','));
+  console.log(queryString)
+  window.location.href = '/sectionvideo?' + queryString;
+})

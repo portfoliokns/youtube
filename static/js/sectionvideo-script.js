@@ -1,6 +1,11 @@
 let player;
 var button = document.getElementById('button-start');
 var loopInterval
+var videoURL = videoURL;
+
+window.addEventListener('load', function() {
+  document.getElementById('url-sectionvideo').value = videoURL;
+})
 
 function onYouTubeIframeAPIReady() {
   console.log('YouTube IFrame API is ready');
@@ -58,6 +63,11 @@ button.addEventListener('click', function() {
   var url = document.getElementById('url-sectionvideo');
   var start = document.getElementById('start-time');
   var end = document.getElementById('end-time');
+
+  if (!url.value) {
+    alert("動画のURLを設定してください。");
+    return;
+  }
 
   if (!isTimeValue(start.value) || !isTimeValue(end.value)) {
     alert("入力時刻に誤りがあります。確認してください。hh:mm:ss:msの形式で数値で入力する必要があります。");

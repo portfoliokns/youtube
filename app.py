@@ -13,6 +13,7 @@ default_videoURLs_multivideo = [
   "https://www.youtube.com/watch?v=0C2EK3VUdLw", #ライブカメラ映像
 ]
 videoURLs =[]
+videoURL = ""
 
 @app.route('/')
 def index():
@@ -32,7 +33,8 @@ def multivideo():
 
 @app.route('/sectionvideo')
 def sectionvideo():
-  return render_template('sectionvideo.html')
+  urls = request.args.get('urls', '')
+  return render_template('sectionvideo.html', videoURL=urls)
 
 if __name__ == "__main__":
   app.run(debug=True)

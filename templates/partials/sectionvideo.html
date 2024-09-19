@@ -2,8 +2,8 @@
 
 <div class="input-box">
   <input type="text" id="url-sectionvideo" class="url-input-playlist" placeholder="https://www.youtube.com/watch?v=01234567890" value="">
-  <input type="text" id="start-time" class="time-input" placeholder="hh:mm:ss:ms" value="00:00:10:00">
-  <input type="text" id="end-time" class="time-input" placeholder="hh:mm:ss:ms" value="00:01:20:00">
+  <input type="text" id="start-time" class="time-input" placeholder="hh:mm:ss:ms" value="00:00:00:00">
+  <input type="text" id="end-time" class="time-input" placeholder="hh:mm:ss:ms" value="00:00:10:00">
   <a href="#" id="button-start" class="button">視聴開始</a>
 </div>
 
@@ -11,5 +11,8 @@
   <div id="player"></div>
 </div>
 
+<script>
+  var videoURL = {{ videoURL|tojson|safe }};
+</script>
 <script src="{{ url_for('static', filename='js/sectionvideo-script.js') }}"></script>
 <script src="https://www.youtube.com/iframe_api"></script>

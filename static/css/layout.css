@@ -19,7 +19,6 @@ body{
 .main{
   background-color: lightblue;
   width: 100%;
-  padding-top: 10px;
   flex-grow: 1;
 }
 
@@ -52,21 +51,27 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding-top: 20px; */
 }
 
 .stream-contents{
-  padding-top: 20px;
+  /* padding-top: 20px; */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  margin: 5px;
+  /* border: 1px solid #000000; */
 }
 
 .stream-content{
+  margin-bottom: 15px;
+  display: flex;
+  align-items:center;
+  border: 1px solid #000000;
+}
+
+.stream-content-box{
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content: center;
 }
 
 .button {
@@ -94,7 +99,7 @@ a{
   border-color: #388e3c; /* クリック時のボーダー色 */
 }
 
-.url-input-playlist,.url-input-multi{
+.url-input-playlist,.url-input-multi,.url-input-section{
   width: 350px;
   padding: 5px;
   margin: 5px;
